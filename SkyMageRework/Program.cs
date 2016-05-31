@@ -142,21 +142,21 @@ namespace SkyMageRework
 			R = me.Spellbook.SpellR;
 
 			// Item
-			ethereal = me.FindItem("item_ethereal_blade");
+			ethereal = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("ethereal"));
 
-			sheep = target.ClassID == ClassID.CDOTA_Unit_Hero_Tidehunter ? null : me.FindItem("item_sheepstick");
+			sheep = target.ClassID == ClassID.CDOTA_Unit_Hero_Tidehunter ? null : me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("imba_sheepstick"));
 
-			vail = me.FindItem("item_veil_of_discord");
+			vail = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("veil"));
 
 			cheese = me.FindItem("item_cheese");
 
 			ghost = me.FindItem("item_ghost");
 
-			orchid = me.FindItem("item_orchid");
+			orchid = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("imba_orchid"));
 
-			atos = me.FindItem("item_rod_of_atos");
+			atos = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("rod"));
 
-			soulring = me.FindItem("item_soul_ring");
+			soulring = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("soul"));
 
 			arcane = me.FindItem("item_arcane_boots");
 
@@ -164,7 +164,7 @@ namespace SkyMageRework
 
 			shiva = me.FindItem("item_shivas_guard");
 
-			dagon = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("item_dagon"));
+			dagon = me.Inventory.Items.FirstOrDefault(item => item.Name.Contains("dagon"));;
 
 
 			Active = Game.IsKeyDown(Menu.Item("Combo Key").GetValue<KeyBind>().Key);
